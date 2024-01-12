@@ -32,12 +32,12 @@
 "yd_thread_limit":4,
 "yd_flags":"4kz|auto",
 "yd_danmu":true,
-"pikpak_username":"饭太硬",
-"pikpak_password":"饭太硬",
+"pikpak_username":"yiroxa8279@frandin.com",
+"pikpak_password":"1234567890.",
 "pikpak_flags":"4k|auto",
 "pikpak_thread_limit":2,
 "pikpak_vip_thread_limit":2,
-"pikpak_proxy":"socks5://192.168.101.1:1080"
+"pikpak_proxy":"socks5://127.0.0.1:1080"
 "pikpak_proxy_onlyapi":false,
 "pikpak_danmu":true
 }
