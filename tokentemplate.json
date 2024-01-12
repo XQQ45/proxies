@@ -18,7 +18,6 @@
 "thunder_vip_thread_limit":2,
 "thunder_flags":"4k|4kz|auto",
 "aliproxy":"",
-"aliproxy_url":"",
 "proxy":"",
 "open_api_url":"https://api.xhofe.top/alist/ali_open/",
 "danmu":true,
@@ -37,7 +36,5 @@
 "pikpak_flags":"4k|auto",
 "pikpak_thread_limit":2,
 "pikpak_vip_thread_limit":2,
-"pikpak_proxy":"socks5://127.0.0.1:1080"
-"pikpak_proxy_onlyapi":false,
-"pikpak_danmu":true
+"pikpak_proxy":"socks5://192.168.101.1:1080"
 }
