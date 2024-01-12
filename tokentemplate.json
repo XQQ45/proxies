@@ -35,9 +35,9 @@
 "pikpak_username":"pitrihispi@outlook.com",
 "pikpak_password":"1234567890.",
 "pikpak_flags":"4k|auto",
-"pikpak_thread_limit":2,
-"pikpak_vip_thread_limit":2,
+"pikpak_thread_limit":4,
+"pikpak_vip_thread_limit":4,
 "pikpak_proxy":"",
-"pikpak_proxy_onlyapi":true,
+"pikpak_proxy_onlyapi":false,
 "pikpak_danmu":true
 }
