@@ -36,4 +36,7 @@
 "pikpak_password":"1234567890.",
 "pikpak_flags":"4k|auto",
 "pikpak_thread_limit":4,
-"pikpak_vip_thread_limit":4}
+"pikpak_vip_thread_limit":4,
+"pikpak_proxy":"socks5://0.0.0.0:5566",
+"pikpak_danmu":true
+}
