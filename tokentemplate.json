@@ -37,6 +37,7 @@
 "pikpak_flags":"4k|auto",
 "pikpak_thread_limit":4,
 "pikpak_vip_thread_limit":4,
-"pikpak_proxy":"socks5://0.0.0.0:5566",
+"pikpak_proxy":"socks5://10.67.93.118:5566",
+"pikpak_proxy_onlyapi":false,
 "pikpak_danmu":true
 }
