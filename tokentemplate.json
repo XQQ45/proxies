@@ -39,5 +39,5 @@
 "pikpak_vip_thread_limit":2,
 "pikpak_proxy":"socks5://172.19.0.1:5566",
 "pikpak_proxy_onlyapi":false,
-"pikpak_danmu":true
+"pikpak_danmu":false
 }
