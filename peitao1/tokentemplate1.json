@@ -18,7 +18,7 @@
 "thunder_vip_thread_limit":2,
 "thunder_flags":"auto",
 "aliproxy":"",
-"aliproxy_url":"",
+"aliproxy_url":"https://mirror.ghproxy.com/https://github.com/XQQ45/proxies/blob/catvod/aliproxy?raw=true",
 "proxy":"",
 "open_api_url":"https://api.xhofe.top/alist/ali_open/",
 "danmu":false,
