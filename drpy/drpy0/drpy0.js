@@ -1,11 +1,11 @@
-import cheerio from 'assets://js/lib/cheerio.min.js';
-import 'assets://js/lib/crypto-js.js';
-import './jsencrypt.js';
-import './node-rsa.js';
-import './pako.min.js';
+import cheerio from 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/che0.js';
+import 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/cry0.js';
+import 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/sen0.js';
+import 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/rsa0.js';
+import 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/pako0.js';
 // import JSEncrypt from './jsencrypt.js'; // 会导致壳子崩溃的
-import 模板 from './模板.js'
-import {gbkTool} from './gbk.js'
+import 模板 from 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/moban0.js'
+import {gbkTool} from 'https://raw.githubusercontent.com/XQQ45/proxies/catvod/drpy/drpy0/gbk0.js'
 
 // import cheerio from "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/cheerio.min.js";
 // import "https://ghproxy.net/https://raw.githubusercontent.com/hjdhnx/dr_py/main/libs/crypto-js.js";
