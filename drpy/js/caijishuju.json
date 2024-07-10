@@ -1,18 +1,6 @@
 [
-
   {
-    "name": "快av",
-    "url": "https://kuaiavzy.com",
-    "parse_url": "",
-    "cate_exclude": "",
-    "class_name": "H4sIAFdXhmYC/zWOXQ6CMBCEb9NzaoxiVYxitAnwUA2KQfpijKkVOM3+4C0spr5M8mVmZ4fUmfIa7A5XTmDWgiv7qKJlHAAajVUiwEoe4MKbmaDfDSnNevyHXA4A1tAhQqPwtQ8Ozp+U+7YiBee4K8AVAuPjZ5Ti4krNLfyhybSXd1/wpsRw9vAquN2yO4U5VJfcrX3GJ79krv5JtQAAAA==",
-    "class_url": "1&2&3&4&6&7&8&9&10&11&13&14&15&20",
-    "cate_excludes": [
-      "日本专区"
-    ]
-  },
-  {
-    "name": "♥搞起(直连)",
+    "name": "搞起",
     "url": "https://caiji.gqjiexi.com",
     "parse_url": "",
     "cate_exclude": "",
@@ -27,7 +15,7 @@
     ]
   },
   {
-    "name": "狼友会资源",
+    "name": "狼友会",
     "url": "https://api.lyhapi.com",
     "parse_url": "",
     "cate_exclude": "",
@@ -47,7 +35,7 @@
     ]
   },
   {
-    "name": "老色逼资源|AV",
+    "name": "老色逼",
     "url": "https://apilsbzy1.com",
     "parse_url": "",
     "cate_exclude": "",
