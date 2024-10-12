@@ -2,7 +2,7 @@ var rule = {
     title: 'soav',
     host: 'https://777090.xyz',
     url: 'category/fyclass/page/fypage/',
-    searchUrl: '/?s=**',
+    searchUrl: 'https://777090.xyz/?s=**',
     searchable: 2,
     quickSearch: 0,
     headers: {
