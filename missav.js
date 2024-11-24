@@ -233,7 +233,7 @@ console.log(JSON.stringify(GM_info));
                     vod_actor: formatDetail(detail, "女优"),
                     vod_content: $("head meta[name=description]").attr("content"),
                     vod_play_from: "MissAV",
-                    vod_play_url: hls.url,
+                    vod_play_url: "多视轨$" + hls.url,
                 };
                 console.log({list: [vod]})
                 return {list: [vod]};
