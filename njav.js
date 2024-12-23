@@ -1,13 +1,12 @@
 // ==UserScript==
-// @name         nJAV
+// @name         123av
 // @namespace    gmspider
-// @version      2024.11.23
-// @description  nJAV GMSpider
+// @version      2024.12.03
+// @description  123av GMSpider
 // @author       Luomo
 // @match        https://123av.com/*
-// @match        https://javplayer.me/*
-// @require      https://cdn.jsdelivr.net/gh/CatVodSpider-GM/Spiders-Lib@main/lib/jquery-2.2.4.min.js
-// @require      https://cdn.jsdelivr.net/gh/CatVodSpider-GM/Spiders-Lib@main/lib/jquery-observe-3.0.0.min.js
+// @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js
+// @grant        unsafeWindow
 // ==/UserScript==
 console.log(JSON.stringify(GM_info));
 (function () {
@@ -17,8 +16,8 @@ console.log(JSON.stringify(GM_info));
         GMSpiderArgs.fName = args.shift();
         GMSpiderArgs.fArgs = args;
     } else {
-        GMSpiderArgs.fName = "homeContent";
-        GMSpiderArgs.fArgs = [true];
+        GMSpiderArgs.fName = "categoryContent";
+        GMSpiderArgs.fArgs = ["tags"];
     }
     Object.freeze(GMSpiderArgs);
     const GmSpider = (function () {
@@ -77,26 +76,19 @@ console.log(JSON.stringify(GM_info));
                 ]
             }];
 
-        function pageList(result) {
-            result.total = parseInt($("#page-list .section-title .text-muted").text().replace(",", ""));
-            result.pagecount = Math.ceil(result.total / result.limit);
-            $("#page-list .box-item-list .box-item").each(function (i) {
-                result.list.push({
-                    vod_id: getIdFromHref($(this).find(".thumb a").attr("href")),
-                    vod_name: $(this).find(".detail a").text(),
-                    vod_pic: $(this).find(".thumb img").data("src"),
-                    vod_year: $(this).find(".duration").text()
-                })
+        function pageList(select) {
+            let itemList = [];
+            $(select).each(function (i) {
+                if ($(this).find("a").attr("href") != "javascript:void(0);") {
+                    itemList.push({
+                        vod_id: $(this).find("a").attr("href").split("/").at(-1),
+                        vod_name: $(this).find(".detail a").text(),
+                        vod_pic: $(this).find("img").data("src"),
+                        vod_year: $(this).find(".duration").text()
+                    })
+                }
             });
-            return result;
-        }
-
-        function getIdFromHref(href) {
-            return href.split("/").pop();
-        }
-
-        function Video(id, data) {
-            return data.stream;
+            return itemList;
         }
 
         function formatDetail(detail, ...keys) {
@@ -113,61 +105,55 @@ console.log(JSON.stringify(GM_info));
                 let result = {
                     class: [
                         {type_id: "recent-update", type_name: "最近更新"},
+                        {type_id: "trending", type_name: "热门"},
                         {type_id: "new-release", type_name: "全新上市"},
-                        {type_id: "censored", type_name: "审查"},
-                        {type_id: "uncensored", type_name: "未经审查"},
-                        {type_id: "uncensored-leaked", type_name: "未经审查泄露"},
-                        {type_id: "vr", type_name: "VR"},
+                        {type_id: "censored", type_name: "有码"},
+                        {type_id: "uncensored", type_name: "无码"},
+                        {type_id: "tags", type_name: "厂牌"},
                         {type_id: "genres", type_name: "类型"}
                     ],
                     filters: {
                         "recent-update": filterWithoutSort,
+                        "trending": defaultFilter,
                         "new-release": filterWithoutSort,
                         "censored": defaultFilter,
                         "uncensored": defaultFilter,
-                        "uncensored-leaked": defaultFilter,
-                        "vr": defaultFilter,
+                        "tags": defaultFilter,
                         "genres": defaultFilter
                     },
-                    list: [],
-                    parse: 0,
-                    jx: 0
+                    list: []
                 };
-                const canonical = $("head link[rel=canonical]").attr("href");
-                const base = $("head base").attr('href');
-                if (canonical.includes(base)) {
-                    let urlPrefix = canonical.replace(base, "");
-                    urlPrefix = urlPrefix.endsWith("/") ? urlPrefix : urlPrefix + "/";
-                    result.class.forEach((item) => {
-                        if (item.type_id !== "genres") {
-                            const modifiedTypeId = urlPrefix + item.type_id;
-                            if (result.filters.hasOwnProperty(item.type_id)) {
-                                result.filters[modifiedTypeId] = result.filters[item.type_id];
-                                delete result.filters[item.type_id]
-                            }
-                            item.type_id = urlPrefix + item.type_id;
-                        }
-                    })
-                }
-                $("#top-carousel .box-item-list .box-item:not(.splide__slide--clone)").each(function () {
-                    result.list.push({
-                        vod_id: getIdFromHref($(this).find("a").attr("href")),
-                        vod_name: $(this).find(".name").text(),
-                        vod_pic: $(this).find("img").attr("src"),
-                    })
+                let itemList = pageList(".box-item-list .box-item:not(.splide__slide)");
+                result.list = itemList.filter((item, index) => {
+                    return itemList.findIndex(i => i.vod_id === item.vod_id) === index
                 });
                 return result;
             },
             categoryContent: function (tid, pg, filter, extend) {
                 console.log(tid, pg, filter, JSON.stringify(extend));
-                const result = {
+                let result = {
                     list: [],
-                    limit: 12,
-                    total: 0,
                     page: pg,
                     pagecount: 0
                 };
-                if (tid === "genres") {
+                if (tid === "tags") {
+                    $("#nav ul li a").each(function () {
+                        let tagHref = $(this).attr("href");
+                        if (tagHref.includes("tags") && !tagHref.includes("http")) {
+                            tagHref = tagHref.split("/");
+                            result.list.push({
+                                vod_id: tagHref.at(-2) + "/" + tagHref.at(-1),
+                                vod_name: $(this).text().trim(),
+                                vod_tag: "folder",
+                                style: {
+                                    "type": "rect",
+                                    "ratio": 2
+                                }
+                            })
+                        }
+                    });
+                    result.pagecount = 1;
+                } else if (tid === "genres") {
                     $("#page-list .bl-item").each(function () {
                         result.list.push({
                             vod_id: $(this).find("a").attr("href"),
@@ -182,12 +168,12 @@ console.log(JSON.stringify(GM_info));
                     });
                     result.pagecount = 1;
                 } else {
-                    pageList(result);
+                    result.list = pageList("#page-list .box-item-list .box-item");
+                    result.pagecount = Math.ceil(parseInt($("#page-list .section-title .text-muted").text().replace(",", "")) / 12);
                 }
                 return result;
             },
             detailContent: function (ids) {
-                const playUrl = $("#player iframe").get(0).src;
                 let detail = {};
                 $("#details .detail-item div").each(function (item) {
                     const key = $(this).find("span:first").text().replace(":", "");
@@ -211,31 +197,25 @@ console.log(JSON.stringify(GM_info));
                     vod_director: formatDetail(detail, "制作者", "标签"),
                     vod_actor: formatDetail(detail, "演员"),
                     vod_content: $(".justify-content-between.align-items-start h1").text().trim(),
-                    vod_play_from: "nJAV",
-                    vod_play_url: "720P$" + playUrl,
+                    vod_play_data: [{
+                        from: "123AV",
+                        media: [{
+                            name: "720P",
+                            type: "match"
+                        }]
+                    }]
                 };
                 return {list: [vod]};
-            },
-            playerContent: function (flag, id, vipFlags) {
-                console.log(flag, id, vipFlags);
-                const playUrl = eval($("#player").attr("v-scope"));
-                return {
-                    header: JSON.stringify({
-                        "User-Agent": window.navigator.userAgent,
-                        "Referer": "https://javplayer.me/"
-                    }),
-                    url: playUrl
-                };
             },
             searchContent: function (key, quick, pg) {
                 const result = {
                     list: [],
-                    limit: 12,
-                    total: 0,
                     page: pg,
                     pagecount: 0
                 };
-                return pageList(result);
+                result.list = pageList("#page-list .box-item-list .box-item");
+                result.pagecount = Math.ceil(parseInt($("#page-list .section-title .text-muted").text().replace(",", "")) / 12);
+                return result;
             }
         };
     })();
