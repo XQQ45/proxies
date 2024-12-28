@@ -16,5 +16,5 @@ var rule = {
     lazy: '',
     一级: '.videos-list&&a;img&&alt;img&&data-src;;a&&href',
     二级: '*',
-    搜索: '*',
+    搜索: 'https://777080.xyz/?s=*',
 }
