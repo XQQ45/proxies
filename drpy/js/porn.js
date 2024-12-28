@@ -62,5 +62,5 @@ var rule = {
             vod_play_url: urls.join('#')
         }
     }),
-    搜索: 'https://cn.pornhub.com/video/search?search=*',
+    搜索: '*',
 }
