@@ -6,7 +6,7 @@ var rule = {
     searchable: 1,
     quickSearch: 1,    
     filterable: 1,
-    class_name: '1&2&3&4&5&6&7&8&4K', //静态分类名称拼接
+    class_name: '粉嫩美穴&极品丝袜&粉嫩白虎&极品美女&chinese&台湾美女&传媒&高清无码内射&亚洲4k', //静态分类名称拼接
     class_url: '?k=粉嫩美穴&?k=极品丝袜&?k=粉嫩白虎&?k=极品美女&?k=chinese&?k=台湾美女&?k=传媒&?k=高清无码内射&?k=亚洲4k', //静态分类标识拼接
     limit: 999,
     double: true,
@@ -51,5 +51,5 @@ var rule = {
             vod_play_url: d.join('#')
         }
     }),
-    搜索: '.cust-nb-cols .thumb-block;.title a&&title;img&&data-src;.video-hd-mark&&Text;.title a&&href',
+    搜索: 'https://www.xvideos.com/?k=*',
 }
