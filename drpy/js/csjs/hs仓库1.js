@@ -1,7 +1,7 @@
 //http://55ck.net跳转域名
 var rule = {
     title: '黄色仓库',
-    host: 'http://8390ck.cc/',
+    host: 'http://55ck.net/',
     url: '/vodtype/fyclass-fypage.html',
     searchUrl: '/vodsearch/**----------fypage---.html',
     class_parse: '.stui-pannel__menu&&a[href*=type];a--span&&Text;a&&href;.*/(\\d+).html',
