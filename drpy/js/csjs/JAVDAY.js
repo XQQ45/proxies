@@ -20,5 +20,5 @@ var rule = {
     }),
     一级: 'body&&.videoBox;a&&Text;.videoBox-cover&&style;.number&&Text;a:eq(0)&&href',
     二级: '*',
-    搜索: '.search-item .col-17;h1&&Text;img&&src;;a:eq(0)&&href',
+    搜索: 'https://javday.tv/search/?wd=*',
 }
