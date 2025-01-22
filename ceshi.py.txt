@@ -1,4 +1,4 @@
-# 搬运
+
 import sys
 import requests
 from lxml import etree
@@ -54,6 +54,9 @@ class Spider(Spider):
                 return {'list': [], 'parse': 0, 'jx': 0, 'msg': '获取的数据为空'}
             a = []
             for i in data_list:
+                # vod_id = i.xpath('./@href')
+                # vod_name = i.xpath('./img/@alt')
+                # vod_pic = i.xpath('./img/@src')
                 vod_remarks = i.xpath('./div[2]/text()')
                 vod_year = i.xpath('./div[3]/text()')
                 a.append(
@@ -82,6 +85,9 @@ class Spider(Spider):
                 return {'list': [], 'parse': 0, 'jx': 0, 'msg': '获取的数据为空'}
             a = []
             for i in data_list:
+                # vod_id = i.xpath('./@href')
+                # vod_name = i.xpath('./img/@alt')
+                # vod_pic = i.xpath('./img/@src')
                 vod_remarks = i.xpath('./div[2]/text()')
                 vod_year = i.xpath('./div[3]/text()')
                 a.append(
@@ -124,8 +130,8 @@ class Spider(Spider):
                     'vod_remarks': '',
                     'vod_year': '',
                     'vod_area': '',
-                    'vod_actor': '',
-                    'vod_director': '',
+                    'vod_actor': '沐辰_为爱发电',
+                    'vod_director': '好好学习,天天向上',
                     'vod_content': '',
                     'vod_play_from': 'Rou',
                     'vod_play_url': f'1${play_url}',
@@ -148,6 +154,9 @@ class Spider(Spider):
                 return {'list': [], 'parse': 0, 'jx': 0, 'msg': '获取的数据为空'}
             a = []
             for i in data_list:
+                # vod_id = i.xpath('./@href')
+                # vod_name = i.xpath('./img/@alt')
+                # vod_pic = i.xpath('./img/@src')
                 vod_remarks = i.xpath('./div[2]/text()')
                 vod_year = i.xpath('./div[3]/text()')
                 a.append(
