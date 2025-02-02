@@ -1,6 +1,4 @@
-# coding=utf-8
-# !/usr/bin/python
-# by嗷呜
+
 import json
 import sys
 import time
