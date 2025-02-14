@@ -72,7 +72,7 @@ class Spider(Spider):
         data = self.fetch(f'{self.host}{path}', headers=self.headers()).json()['encData']
         v = self.aes(data)
         d=f'{v["title"]}$auth_key={v["authKey"]}&path={v["videoUrl"]}'
-        vod = {'vod_name': v["title"], 'type_name': ''.join(v.get('tagTitles',[])),'vod_play_from': v.get('nickName') or "小红书官方", 'vod_play_url': d}
+        vod = {'vod_name': v["title"], 'type_name': ''.join(v.get('tagTitles',[])),'vod_play_from': '沐辰', 'vod_play_url': d}
         result = {"list": [vod]}
         return result
 
