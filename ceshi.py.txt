@@ -130,10 +130,10 @@ class Spider(Spider):
                     'vod_remarks': '',
                     'vod_year': '',
                     'vod_area': '',
-                    'vod_actor': '沐辰_为爱发电',
+                    'vod_actor': '',
                     'vod_director': '好好学习,天天向上',
                     'vod_content': '',
-                    'vod_play_from': 'Rou',
+                    'vod_play_from': '沐辰',
                     'vod_play_url': f'1${play_url}',
 
                 }
