@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MissAV
-// @namespace    gmspider
-// @version      2024.12.03
+// @namespace    gmspider  Mengxin
+// @version      2025.3.6
 // @description  MissAV GMSpider
 // @author       Luomo
 // @match        https://missav.*/*

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         123av
-// @namespace    gmspider
-// @version      2024.12.03
+// @namespace    gmspider  Mengxin
+// @version      2025.3.6
 // @description  123av GMSpider
 // @author       Luomo
 // @match        https://123av.com/*

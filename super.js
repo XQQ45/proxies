@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Supjav
-// @namespace    gmspider
-// @version      2024.12.03
+// @namespace    gmspider   Mengxin
+// @version      2025.3.6
 // @description  Supjav GMSpider
 // @author       Luomo
 // @match        https://supjav.com/*

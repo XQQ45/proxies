@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NETFLAV
-// @namespace    gmspider
-// @version      2024.12.11
+// @namespace    gmspider   Mengxin
+// @version      2025.3.6
 // @description  NETFLAV GMSpider
 // @author       Luomo
 // @match        https://netflav.com/*
