@@ -133,9 +133,10 @@ console.log(JSON.stringify(GM_info));
                         {type_id: "chinese-subtitle", type_name: "中文字幕"},
                         {type_id: "uncensored-leak", type_name: "无码流出"},
                         {type_id: "actresses/ranking", type_name: "热门女优"},
+						{type_id: "1pondo", type_name: "一本道"},
+						{type_id: "fc2", type_name: "FC2"},
                         {type_id: "makers", type_name: "发行商"},
-                        {type_id: "genres", type_name: "类型"},
-                    ],
+                        {type_id: "genres", type_name: "类型"}],
                     filters: {
                         "new": defaultFilter,
                         "madou": defaultFilter,

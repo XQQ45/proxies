@@ -109,9 +109,10 @@ console.log(JSON.stringify(GM_info));
                         {type_id: "new-release", type_name: "全新上市"},
                         {type_id: "censored", type_name: "有码"},
                         {type_id: "uncensored", type_name: "无码"},
+						{type_id: "censored", type_name: "审查"},
+						{type_id: "uncensored", type_name: "未审查"},
                         {type_id: "tags", type_name: "厂牌"},
-                        {type_id: "genres", type_name: "类型"}
-                    ],
+                        {type_id: "genres", type_name: "类型"}],
                     filters: {
                         "recent-update": filterWithoutSort,
                         "trending": defaultFilter,

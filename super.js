@@ -85,7 +85,7 @@ console.log(JSON.stringify(GM_info));
                         {type_id: "category/reducing-mosaic", type_name: "无码破解"},
                         {type_id: "category/english-subtitles", type_name: "英文字幕"},
                         {type_id: "tag", type_name: "类别"},
-                    ],
+						{type_id: "cast", type_name: "女优"}],
                     filters: {
                         popular: [{
                             key: "sort",
