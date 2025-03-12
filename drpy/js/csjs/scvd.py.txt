@@ -56,11 +56,11 @@ class Spider(Spider):
         cateManual = {
             "最新": "/new",
             "最佳": "/best",
-			"国产": "/tags/国产",
-			"日本": "/tags/japan",
-			"动画": "/tags/animation",
-			"Cosplay": "/tags/cosplay",
-			"3D": "/tags/3d-hentai",
+			"国产": "two_click_/tags/国产",
+			"日本": "two_click_/tags/japan",
+			"动画": "two_click_/tags/animation",
+			"Cosplay": "two_click_/tags/cosplay",
+			"3D": "two_click_/tags/3d-hentai",
             "频道": "/channels-index",
             "标签": "/tags",
             "明星": "/pornstars-index"
