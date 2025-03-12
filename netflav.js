@@ -70,12 +70,12 @@ if (typeof unsafeWindow.gmSpiderRunning === "undefined") {
                             {type_id: "trending?", type_name: "最受欢迎"},
                             {type_id: "browse?", type_name: "年度精选"},
                             {type_id: "chinese-sub?", type_name: "中文字幕"},
-                            {type_id: "all?genre=國產AV", type_name: "国产AV"},
                             {type_id: "censored?", type_name: "有码影片"},
                             {type_id: "uncensored?", type_name: "无码影片"},
+							{type_id: "all?genre=國產AV", type_name: "国产AV"},
+							{type_id: "all?genre=美少女", type_name: "美少女"},
                             {type_id: "genre?", type_name: "类别"},
-							{type_id: "actress", type_name: "女优"},
-							{type_id: "fc2", type_name: "FC2"}],
+							{type_id: "actress?", type_name: "女优"}],
                         filters: {
                             "trending?": [{
                                 key: "range", name: "时间", value: [{

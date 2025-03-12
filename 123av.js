@@ -106,22 +106,13 @@ console.log(JSON.stringify(GM_info));
                     class: [
                         {type_id: "recent-update", type_name: "最近更新"},
                         {type_id: "trending", type_name: "热门"},
-                        {type_id: "new-release", type_name: "全新上市"},
-                        {type_id: "censored", type_name: "有码"},
-                        {type_id: "uncensored", type_name: "无码"},
-						{type_id: "censored", type_name: "审查"},
-						{type_id: "uncensored", type_name: "未审查"},
-                        {type_id: "tags", type_name: "厂牌"},
-                        {type_id: "genres", type_name: "类型"}],
-                    filters: {
-                        "recent-update": filterWithoutSort,
-                        "trending": defaultFilter,
-                        "new-release": filterWithoutSort,
-                        "censored": defaultFilter,
-                        "uncensored": defaultFilter,
-                        "tags": defaultFilter,
-                        "genres": defaultFilter
-                    },
+                        {type_id: "new-release", type_name: "新发布"},
+                        {type_id: "censored", type_name: "审查"},
+                        {type_id: "uncensored", type_name: "未审查"},
+						{type_id: "uncensored-leaked", type_name: "泄露未审查"},
+						{type_id: "vr", type_name: "VR"},
+                        {type_id: "tags/fc2", type_name: "FC2"},
+                        {type_id: "tags/1pondo", type_name: "一本道"}],
                     list: []
                 };
                 let itemList = pageList(".box-item-list .box-item:not(.splide__slide)");

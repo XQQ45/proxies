@@ -84,8 +84,8 @@ console.log(JSON.stringify(GM_info));
                         {type_id: "category/chinese-subtitles", type_name: "中文字幕"},
                         {type_id: "category/reducing-mosaic", type_name: "无码破解"},
                         {type_id: "category/english-subtitles", type_name: "英文字幕"},
-                        {type_id: "tag", type_name: "类别"},
-						{type_id: "cast", type_name: "女优"}],
+                        {type_id: "tag/bestomnibus", type_name: "精选/综合"},
+						{type_id: "tag/beautiful-girl", type_name: "美少女"}],
                     filters: {
                         popular: [{
                             key: "sort",
