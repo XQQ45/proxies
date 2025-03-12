@@ -53,7 +53,13 @@ class Spider(Spider):
         result = {}
         cateManual = {
             "4K": "/4k",
-            "国产": "two_click_/categories/chinese",
+            "国产": "/categories/chinese",
+			"日本": "/categories/japanese",
+			"香港": "/categories/hong-kong",
+			"自拍": "/categories/homemade",
+			"随机": "/categories/uncensored",
+			"动画": "/categories/cartoon",
+			"3D": "/categories/3d",
             "最新": "/newest",
             "最佳": "/best",
             "频道": "/channels",
