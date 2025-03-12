@@ -54,6 +54,11 @@ class Spider(Spider):
         result = {}
         cateManual = {
             "视频": "/video",
+			"日本": "/video?c=111",
+			"亚洲": "/video?c=1",
+			"少女": "/categories/teen",
+			"Cosplay": "/video?c=241",
+			"动画": "/categories/hentai",
             "片单": "/playlists",
             "频道": "/channels",
             "分类": "/categories",
