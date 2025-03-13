@@ -54,13 +54,13 @@ class Spider(Spider):
     def homeContent(self, filter):
         result = {}
         cateManual = {
-            "最新": "/new",
+			"国产": "tags_click_/tags/国产",
+			"日本": "tags_click_/tags/japan",
+			"动漫": "tags_click_/tags/anime",
+			"3D": "tags_click_/tags/3d",
+			"Cosplay": "tags_click_/tags/cosplay",
+			"最新": "/new",
             "最佳": "/best",
-			"国产": "two_click_/tags/国产",
-			"日本": "two_click_/tags/japan",
-			"动画": "two_click_/tags/animation",
-			"Cosplay": "two_click_/tags/cosplay",
-			"3D": "two_click_/tags/3d-hentai",
             "频道": "/channels-index",
             "标签": "/tags",
             "明星": "/pornstars-index"
