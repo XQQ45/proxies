@@ -53,12 +53,14 @@ class Spider(Spider):
     def homeContent(self, filter):
         result = {}
         cateManual = {
-            "视频": "/video",
-			"日本": "/video?c=111",
-			"亚洲": "/video?c=1",
-			"少女": "/categories/teen",
-			"Cosplay": "/video?c=241",
-			"动画": "/categories/hentai",
+			"日本": "/video?c=111_this_video",
+			"亚洲": "/video?c=1_this_video",
+			"欧美": "/video?c=100_this_video",
+			"年轻": "/categories/teen_this_video",
+			"动画": "/categories/hentai_this_video",
+			"Cosplay": "/video?c=241_this_video",
+			"高清": "/hd",
+			"视频": "/video",
             "片单": "/playlists",
             "频道": "/channels",
             "分类": "/categories",
