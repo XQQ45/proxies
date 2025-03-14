@@ -59,7 +59,7 @@ class Spider(Spider):
 			"年轻": "/categories/teen_this_video",
 			"动画": "/categories/hentai_this_video",
 			"Cosplay": "/video?c=241_this_video",
-			"高清": "/hd",
+			"高清": "/hd_this_video",
 			"视频": "/video",
             "片单": "/playlists",
             "频道": "/channels",
