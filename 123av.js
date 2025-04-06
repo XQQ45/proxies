@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name         123av
-// @namespace    gmspider
-// @version      2024.12.03
-// @description  123av GMSpider
+// @namespace    gmspider	Mengxin
+// @version      2025.4.6
 // @author       Luomo
 // @match        https://123av.com/*
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js
@@ -105,13 +104,16 @@ console.log(JSON.stringify(GM_info));
                 let result = {
                     class: [
                         {type_id: "recent-update", type_name: "最近更新"},
-                        {type_id: "trending", type_name: "热门"},
-                        {type_id: "new-release", type_name: "全新上市"},
-                        {type_id: "censored", type_name: "有码"},
-                        {type_id: "uncensored", type_name: "无码"},
+						{type_id: "new-release", type_name: "新发布"},
+						{type_id: "trending", type_name: "热门"},
+						{type_id: "censored", type_name: "审查"},
+                        {type_id: "uncensored", type_name: "未审查"},
+						{type_id: "tags/siro", type_name: "SIRO"},
+						{type_id: "tags/259luxu", type_name: "LUXU"},
+						{type_id: "tags/fc2", type_name: "FC2"},
+						{type_id: "tags/1pondo", type_name: "一本道"},
                         {type_id: "tags", type_name: "厂牌"},
-                        {type_id: "genres", type_name: "类型"}
-                    ],
+                        {type_id: "genres", type_name: "类型"}],
                     filters: {
                         "recent-update": filterWithoutSort,
                         "trending": defaultFilter,

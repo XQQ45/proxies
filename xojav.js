@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         XOJAV
-// @namespace    gmspider
-// @version      2024.12.02
+// @namespace    gmspider	Mengxin
+// @version      2025.4.6
 // @description  XOJAV GMSpider
 // @author       Luomo
 // @match        https://xojav.tv/*
@@ -45,11 +45,21 @@ console.log(JSON.stringify(GM_info));
                 let result = {
                     class: [
                         {type_id: "latest-updates?sort_by=release_at", type_name: "最近更新"},
+						{type_id: "stars?sort_by=stars", type_name: "近期最佳"},
+						{type_id: "hot?sort_by=views", type_name: "热门"},
+						{type_id: "categories/chinese-subtitle?sort_by=release_at", type_name: "中文字幕"},
+						{type_id: "categories/jav?sort_by=release_at", type_name: "日本AV"},
+						{type_id: "categories/uncensored?sort_by=release_at", type_name: "无码破解"},
                         {type_id: "categories/taiwan-av?sort_by=release_at", type_name: "台湾AV"},
-                        {type_id: "stars?sort_by=stars", type_name: "近期最佳"},
-                        {type_id: "hot?sort_by=views", type_name: "热门"},
-                        {type_id: "categories?", type_name: "所有分类"},
-                    ],
+						{type_id: "categories/roleplay?sort_by=release_at", type_name: "角色剧情"},
+						{type_id: "categories/uniform?sort_by=release_at", type_name: "制服诱惑"},
+						{type_id: "categories/pantyhose?sort_by=release_at", type_name: "丝袜"},
+						{type_id: "categories/sex-only?sort_by=release_at", type_name: "直接开啪"},
+						{type_id: "categories/groupsex?sort_by=release_at", type_name: "多人群交"},
+						{type_id: "categories/bdsm?sort_by=release_at", type_name: "主奴调教"},
+						{type_id: "categories/r__e?sort_by=release_at", type_name: "强奸"},
+						{type_id: "categories/pov?sort_by=release_at", type_name: "第一视角"},
+						{type_id: "categories/hixxen-cam?sort_by=release_at", type_name: "流出"}],
                     filters: {
                         "categories/taiwan-av?sort_by=release_at": [{
                             key: "sort_by",
