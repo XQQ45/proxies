@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MissAV
-// @namespace    gmspider  Mengxin
-// @version      2025.3.6
+// @namespace    gmspider
+// @version      2024.12.03
 // @description  MissAV GMSpider
 // @author       Luomo
 // @match        https://missav.*/*
@@ -128,21 +128,14 @@ console.log(JSON.stringify(GM_info));
             homeContent: function (filter) {
                 let result = {
                     class: [
+                        {type_id: "new", type_name: "所有影片"},
+                        {type_id: "madou", type_name: "麻豆传媒"},
                         {type_id: "chinese-subtitle", type_name: "中文字幕"},
-						{type_id: "siro", type_name: "SIRO"},
-						{type_id: "luxu", type_name: "LUXU"},
                         {type_id: "uncensored-leak", type_name: "无码流出"},
-						{type_id: "fc2", type_name: "FC2"},
-						{type_id: "heyzo", type_name: "HEYZO"},
-                        {type_id: "tokyohot", type_name: "东京热"},
-						{type_id: "1pondo", type_name: "一本道"},
-						{type_id: "madou", type_name: "麻豆传媒"},
-						{type_id: "klive", type_name: "韩国直播"},
-						{type_id: "clive", type_name: "中国直播"},
-						{type_id: "new", type_name: "最近更新"},
-						{type_id: "actresses/ranking", type_name: "女优"},
-						{type_id: "genres", type_name: "类型"},
-                        {type_id: "makers", type_name: "发行商"}],
+                        {type_id: "actresses/ranking", type_name: "热门女优"},
+                        {type_id: "makers", type_name: "发行商"},
+                        {type_id: "genres", type_name: "类型"},
+                    ],
                     filters: {
                         "new": defaultFilter,
                         "madou": defaultFilter,

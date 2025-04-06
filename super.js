@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Supjav
-// @namespace    gmspider   Mengxin
-// @version      2025.3.6
+// @namespace    gmspider
+// @version      2024.12.03
 // @description  Supjav GMSpider
 // @author       Luomo
 // @match        https://supjav.com/*
@@ -84,13 +84,8 @@ console.log(JSON.stringify(GM_info));
                         {type_id: "category/chinese-subtitles", type_name: "中文字幕"},
                         {type_id: "category/reducing-mosaic", type_name: "无码破解"},
                         {type_id: "category/english-subtitles", type_name: "英文字幕"},
-						{type_id: "tag/creampie", type_name: "中出"},
-						{type_id: "tag/beautiful-girl", type_name: "美少女"},
-						{type_id: "tag/slender", type_name: "苗条"},
-						{type_id: "tag/breasts", type_name: "美乳"},
-						{type_id: "tag/fc2ppv", type_name: "FC2"},
-						{type_id: "tag/nastyhardcore", type_name: "淫乱"},
-                        {type_id: "tag/bestomnibus", type_name: "精选/综合"}],
+                        {type_id: "tag", type_name: "类别"},
+                    ],
                     filters: {
                         popular: [{
                             key: "sort",

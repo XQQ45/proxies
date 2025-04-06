@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         NETFLAV
-// @namespace    gmspider   Mengxin
-// @version      2025.3.6
+// @namespace    gmspider
+// @version      2024.12.11
 // @description  NETFLAV GMSpider
 // @author       Luomo
 // @match        https://netflav.com/*
@@ -69,44 +69,10 @@ if (typeof unsafeWindow.gmSpiderRunning === "undefined") {
                         class: [
                             {type_id: "trending?", type_name: "最受欢迎"},
                             {type_id: "browse?", type_name: "年度精选"},
+                            {type_id: "chinese-sub?", type_name: "中文字幕"},
+                            {type_id: "all?genre=國產AV", type_name: "国产AV"},
                             {type_id: "censored?", type_name: "有码影片"},
                             {type_id: "uncensored?", type_name: "无码影片"},
-							{type_id: "chinese-sub?", type_name: "中文字幕"},
-							{type_id: "all?genre=國產AV", type_name: "国产AV"},
-							{type_id: "all?genre=巨尻", type_name: "大屁股"},
-							{type_id: "all?genre=性奴", type_name: "性奴"},
-							{type_id: "all?genre=性騷擾", type_name: "性骚扰"},
-							{type_id: "all?genre=處女", type_name: "处女"},
-							{type_id: "all?genre=戀乳癖", type_name: "恋乳癖"},
-							{type_id: "all?genre=野外・露出", type_name: "野外/露出"},
-							{type_id: "all?genre=爛醉如泥的", type_name: "烂醉"},
-							{type_id: "all?genre=蠻橫嬌羞", type_name: "蛮横娇羞"},
-							{type_id: "all?genre=處男", type_name: "处男"},
-							{type_id: "all?genre=正太控", type_name: "正太控"},
-							{type_id: "all?genre=出軌", type_name: "出轨"},
-							{type_id: "all?genre=運動", type_name: "运动"},
-							{type_id: "all?genre=性感的", type_name: "性感"},
-							{type_id: "all?genre=美容院", type_name: "美容院"},
-							{type_id: "all?genre=殘忍畫面", type_name: "残暴"},
-							{type_id: "all?genre=妄想", type_name: "妄想"},
-							{type_id: "all?genre=惡作劇", type_name: "恶作剧"},
-							{type_id: "all?genre=學校作品", type_name: "学校"},
-							{type_id: "all?genre=粗暴", type_name: "粗暴"},
-							{type_id: "all?genre=通姦", type_name: "通奸"},
-							{type_id: "all?genre=姐妹", type_name: "姐妹"},
-							{type_id: "all?genre=跳舞", type_name: "舞蹈"},
-							{type_id: "all?genre=倒追", type_name: "白虎"},
-							{type_id: "all?genre=戀腿癖", type_name: "恋腿癖"},
-							{type_id: "all?genre=偷窥", type_name: "偷窥"},
-							{type_id: "all?genre=花癡", type_name: "花痴"},
-							{type_id: "all?genre=情侶", type_name: "情侣"},
-							{type_id: "all?genre=亂倫", type_name: "乱伦"},
-							{type_id: "all?genre=偶像藝人", type_name: "偶像"},
-							{type_id: "all?genre=温泉", type_name: "温泉"},
-							{type_id: "all?genre=ハーレム", type_name: "后宫"},
-							{type_id: "all?genre=キス・接吻", type_name: "接吻"},
-							{type_id: "all?genre=美少女", type_name: "美少女"},
-							{type_id: "all?genre=時間停止", type_name: "时间停止"},
                             {type_id: "genre?", type_name: "类别"}],
                         filters: {
                             "trending?": [{

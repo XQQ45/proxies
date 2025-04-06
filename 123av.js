@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         123av
-// @namespace    gmspider  Mengxin
-// @version      2025.3.6
+// @namespace    gmspider
+// @version      2024.12.03
 // @description  123av GMSpider
 // @author       Luomo
 // @match        https://123av.com/*
@@ -16,7 +16,7 @@ console.log(JSON.stringify(GM_info));
         GMSpiderArgs.fName = args.shift();
         GMSpiderArgs.fArgs = args;
     } else {
-        GMSpiderArgs.fName = "detailContent";
+        GMSpiderArgs.fName = "homeContent";
         GMSpiderArgs.fArgs = ["tags"];
     }
     Object.freeze(GMSpiderArgs);
@@ -106,15 +106,31 @@ console.log(JSON.stringify(GM_info));
                     class: [
                         {type_id: "recent-update", type_name: "最近更新"},
                         {type_id: "trending", type_name: "热门"},
-                        {type_id: "new-release", type_name: "新发布"},
-                        {type_id: "censored", type_name: "审查"},
-                        {type_id: "uncensored", type_name: "未审查"},
-						{type_id: "uncensored-leaked", type_name: "泄露未审查"},
-						{type_id: "vr", type_name: "VR"},
-                        {type_id: "tags/fc2", type_name: "FC2"},
-                        {type_id: "tags/1pondo", type_name: "一本道"}],
+                        {type_id: "new-release", type_name: "全新上市"},
+                        {type_id: "censored", type_name: "有码"},
+                        {type_id: "uncensored", type_name: "无码"},
+                        {type_id: "tags", type_name: "厂牌"},
+                        {type_id: "genres", type_name: "类型"}
+                    ],
+                    filters: {
+                        "recent-update": filterWithoutSort,
+                        "trending": defaultFilter,
+                        "new-release": filterWithoutSort,
+                        "censored": defaultFilter,
+                        "uncensored": defaultFilter,
+                        "tags": defaultFilter,
+                        "genres": defaultFilter
+                    },
                     list: []
                 };
+                result.class.map(item=>{
+                    $("#nav a").each(function () {
+                        if($(this).attr("href").endsWith(item.type_id)){
+                            item.type_id=$(this).attr("href")
+                            return false
+                        }
+                    });
+                })
                 let itemList = pageList(".box-item-list .box-item:not(.splide__slide)");
                 result.list = itemList.filter((item, index) => {
                     return itemList.findIndex(i => i.vod_id === item.vod_id) === index
