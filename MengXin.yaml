@@ -80,6 +80,12 @@ rules:
   - RULE-SET,AdRule,🛑 Error
   - RULE-SET,Hijacking,🛑 Error
   - RULE-SET,Privacy,🛑 Error
+  - RULE-SET,Hanime,🔞 Hanime
+  - RULE-SET,DRct,🎯 全球直连
+  - RULE-SET,Lan,🎯 全球直连
+  - RULE-SET,Direct,🎯 全球直连
+  - RULE-SET,China,🎯 全球直连
+  - RULE-SET,ChinaIP,🎯 全球直连
   - RULE-SET,TencentVideo,🎯 全球直连
   - RULE-SET,BiliBili,🎯 全球直连
   - RULE-SET,CCTV,🎯 全球直连
@@ -93,11 +99,8 @@ rules:
   - RULE-SET,Alibaba,🎯 全球直连
   - RULE-SET,Huawei,🎯 全球直连
   - RULE-SET,NetEase,🎯 全球直连
-  - RULE-SET,China,🎯 全球直连
-  - RULE-SET,ChinaIP,🎯 全球直连
-  - RULE-SET,Direct,🎯 全球直连
-  - RULE-SET,Lan,🎯 全球直连
-  - RULE-SET,DRct,🎯 全球直连
+  - RULE-SET,Proxy,🔰 策略选择
+  - RULE-SET,Global,🔰 策略选择
   - RULE-SET,Microsoft,🔰 策略选择
   - RULE-SET,Google,🔰 策略选择
   - RULE-SET,GitHub,🔰 策略选择
@@ -105,9 +108,6 @@ rules:
   - RULE-SET,GlobalMedia,🔰 策略选择
   - RULE-SET,Steam,🔰 策略选择
   - RULE-SET,Epic,🔰 策略选择
-  - RULE-SET,Global,🔰 策略选择
-  - RULE-SET,Proxy,🔰 策略选择
-  - RULE-SET,Hanime,🔞 Hanime
   - GEOIP,CN,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 
