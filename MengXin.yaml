@@ -40,10 +40,8 @@ proxy-groups:
 
 # 分流规则 
 rule-providers:
-    AdBlock: { behavior: classical,    interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml , path: ./ruleset/AdBlock.yaml }
     AdRule: { behavior: classical, interval: 86400, format: text, type: http, url: https://raw.githubusercontent.com/XQQ45/proxies/rule/AdRule.list ,  path: ./ruleset/AdRule.txt }
     Hijacking: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Hijacking/Hijacking.yaml , path: ./ruleset/Hijacking.yaml }
-    Privacy:  { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Privacy/Privacy.yaml , path: ./ruleset/Privacy.yaml }
     TencentVideo: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TencentVideo/TencentVideo.yaml , path: ./ruleset/TencentVideo.yaml }
     BiliBili: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.yaml , path: ./ruleset/BiliBili.yaml }
     CCTV: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/CCTV/CCTV.yaml , path: ./ruleset/CCTV.yaml }
@@ -76,10 +74,9 @@ rule-providers:
 
 # 分流Policy   规则  分组
 rules:
-  - RULE-SET,AdBlock,🛑 Error
+
   - RULE-SET,AdRule,🛑 Error
   - RULE-SET,Hijacking,🛑 Error
-  - RULE-SET,Privacy,🛑 Error
   - RULE-SET,Hanime,🔞 Hanime
   - RULE-SET,DRct,🎯 全球直连
   - RULE-SET,Lan,🎯 全球直连
