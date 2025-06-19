@@ -32,10 +32,10 @@ proxy-groups:
   - {name: 🇰🇭 柬埔寨(KH), type: url-test, include-all: true, interval: 180,  filter: "(?i)柬埔寨|Cambodia|Kampuchea|KH"}
   - {name: 🇵🇭 菲律宾(PH), type: url-test, include-all: true, interval: 180,  filter: "(?i)Philippines|菲律宾|PH"}
   - {name: 🇦🇷 阿根廷(AR), type: url-test, include-all: true, interval: 180,  filter: "(?i)Argentina|阿根廷|AR"}
-  - {name: 🛑 Error,  type: select, proxies: [REJECT]}
   - {name: 🎯 全球直连,  type: select, proxies: [DIRECT]}
   - {name: 🐟 漏网之鱼,  type: select, proxies: [🔰 策略选择]}
-  - {name: GLOBAL,  type: select, proxies: [🔰 策略选择]}
+  - {name: 🛑 Error,  type: select, proxies: [REJECT]}
+  - {name: GLOBAL,  type: select,include-all: true, proxies: [🔰 策略选择,♻️ Auto select,🔯 斗转星移,⚖️ 下载专属-轮询,⚖️ 负载均衡-散列,⚡ 东风中转,💬 Chat_GPT,🚀 萌新节点,🌐 部分地区,🇦🇷 阿根廷(AR),🇦🇺 澳大利亚(AU),🇨🇦 加拿大(CA),🇩🇪 德国(DE),🇫🇷 法国(FR),🇬🇧 英国(GB),🇭🇰 港澳台,🇮🇳 印度(IN),🇯🇵 日本(JP),🇰🇭 柬埔寨(KH),🇰🇷 韩国(KR),🇳🇱 荷兰(NL),🇵🇭 菲律宾(PH),🇷🇺 俄罗斯(RU),🇸🇬 新加坡(SG),🇹🇷 土耳其(TR),🇹🇭 泰国(TH),🇺🇸 美国(US),🔞 Hanime,🎯 全球直连,🐟 漏网之鱼,🛑 Error]}
 
 
 # 分流规则 
