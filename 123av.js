@@ -1,8 +1,10 @@
 // ==UserScript==
 // @name         123av
 // @namespace    gmspider	Mengxin
-// @version      2025.4.6
+// @version      2025.06.21
+// @description  123av GMSpider
 // @author       Luomo
+// @match        https://*.123av.com/*
 // @match        https://123av.com/*
 // @require      https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js
 // @grant        unsafeWindow
@@ -80,7 +82,7 @@ console.log(JSON.stringify(GM_info));
             $(select).each(function (i) {
                 if ($(this).find("a").attr("href") != "javascript:void(0);") {
                     itemList.push({
-                        vod_id: $(this).find("a").attr("href").split("/").at(-1),
+                        vod_id: $(this).find("a").attr("href").split("/zh/").at(-1),
                         vod_name: $(this).find(".detail a").text(),
                         vod_pic: $(this).find("img").data("src"),
                         vod_year: $(this).find(".duration").text()
