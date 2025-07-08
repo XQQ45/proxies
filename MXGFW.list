@@ -8,7 +8,7 @@
 #GFW   屏蔽 国内 节点  比如 港澳台
 
 DOMAIN-KEYWORD,huaduys
-DOMAIN-KEYWORD,hdys
+
 DOMAIN-SUFFIX,huaduys.org
 DOMAIN-SUFFIX,hdys01.com
 DOMAIN-SUFFIX,hdys02.com
