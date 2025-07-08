@@ -5,8 +5,15 @@
 #	如“DOMAIN-KEYWORD,exa,DIRECT”可以匹配到“a.example.com、a.b.example.com”。
 #DOMAIN：匹配请求的完整域名。
 #	如“DOMAIN,www.example.com,DIRECT”只能匹配到“www.example.com”。
-#Hanime
+#GFW   屏蔽 国内 节点  比如 港澳台
 
 DOMAIN-KEYWORD,huaduys
+DOMAIN-KEYWORD,hdys
 DOMAIN-SUFFIX,huaduys.org
+DOMAIN-SUFFIX,hdys01.com
+DOMAIN-SUFFIX,hdys02.com
+DOMAIN-SUFFIX,hdys03.com
+DOMAIN-SUFFIX,hdys04.com
+DOMAIN-SUFFIX,hdys05.com
+DOMAIN-SUFFIX,hdys06.com
 
