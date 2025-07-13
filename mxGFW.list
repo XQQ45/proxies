@@ -7,15 +7,5 @@
 #	如“DOMAIN,www.example.com,DIRECT”只能匹配到“www.example.com”。
 #GFW   屏蔽 国内 节点  比如 港澳台
 
-DOMAIN-KEYWORD,huaduys
-DOMAIN-KEYWORD,hdys01
-DOMAIN-KEYWORD,hdys02
-DOMAIN-KEYWORD,hdys03
-DOMAIN-KEYWORD,hdys04
-DOMAIN-KEYWORD,hdys05
-DOMAIN-KEYWORD,hdys06
-DOMAIN-SUFFIX,huaduys.org
-DOMAIN-SUFFIX,huaduys.net
-DOMAIN-SUFFIX,huaduys.vip
-DOMAIN-SUFFIX,cdn1.hdys01.com
+
 
