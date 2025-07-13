@@ -1,0 +1,11 @@
+
+#DOMAIN-SUFFIX：匹配请求域名的后缀。
+#	如“DOMAIN-SUFFIX,example.com,DIRECT”可以匹配到“a.example.com、a.b.example.com”。
+#DOMAIN-KEYWORD：匹配请求域名的关键词。
+#	如“DOMAIN-KEYWORD,exa,DIRECT”可以匹配到“a.example.com、a.b.example.com”。
+#DOMAIN：匹配请求的完整域名。
+#	如“DOMAIN,www.example.com,DIRECT”只能匹配到“www.example.com”。
+#GFW   屏蔽 国内 节点  比如 港澳台
+
+
+

@@ -45,7 +45,7 @@ rule-providers:
     AdRule: { behavior: classical, interval: 86400, format: text, type: http, url: https://raw.githubusercontent.com/XQQ45/proxies/rule/AdRule.list ,  path: ./ruleset/AdRule.txt }
     Hijacking: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Hijacking/Hijacking.yaml , path: ./ruleset/Hijacking.yaml }
     Hanime: { behavior: classical, interval: 86400, format: text, type: http, url: https://raw.githubusercontent.com/XQQ45/clash-proxies/rule/Hanime.list ,  path: ./ruleset/Hanime.txt }
-    GFW: { behavior: classical, interval: 86400, format: text, type: http, url: https://raw.githubusercontent.com/XQQ45/proxies/refs/heads/rule/mxGFW.list ,  path: ./ruleset/MXGFW.txt }
+    GFW: { behavior: classical, interval: 86400, format: text, type: http, url: https://raw.githubusercontent.com/XQQ45/proxies/refs/heads/rule/MXGFW.list ,  path: ./ruleset/MXGFW.txt }
     TencentVideo: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TencentVideo/TencentVideo.yaml , path: ./ruleset/TencentVideo.yaml }
     BiliBili: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/BiliBili/BiliBili.yaml , path: ./ruleset/BiliBili.yaml }
     CCTV: { behavior: classical, interval: 86400, format: yaml, type: http, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/CCTV/CCTV.yaml , path: ./ruleset/CCTV.yaml }
