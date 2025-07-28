@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MissAV
 // @namespace    gmspider	Mengxin
-// @version      2025.4.6
+// @version      2025.7.28
 // @description  MissAV GMSpider
 // @author       Luomo
 // @match        https://missav.*/*
@@ -56,24 +56,24 @@ console.log(JSON.stringify(GM_info));
                         v: "&sort=published_at"
                     },
                     {
-                        n: "收藏数",
-                        v: "&sort=saved"
-                    },
-                    {
-                        n: "今日浏览数",
+                        n: "今日排行",
                         v: "&sort=today_views"
                     },
                     {
-                        n: "本周浏览数",
+                        n: "本周排行",
                         v: "&sort=weekly_views"
                     },
                     {
-                        n: "本月浏览数",
+                        n: "本月排行",
                         v: "&sort=monthly_views"
                     },
                     {
-                        n: "总浏览数",
+                        n: "观看次数",
                         v: "&sort=views"
+                    },
+					{
+                        n: "收藏数",
+                        v: "&sort=saved"
                     }
                 ]
             }];
@@ -129,25 +129,37 @@ console.log(JSON.stringify(GM_info));
                 let result = {
                     class: [
                         {type_id: "new", type_name: "最近更新"},
+						{type_id: "release", type_name: "新作上市"},
 						{type_id: "chinese-subtitle", type_name: "中文字幕"},
+						{type_id: "uncensored-leak", type_name: "无码"},
+						{type_id: "fc2", type_name: "FC2"},
 						{type_id: "siro", type_name: "SIRO"},
 						{type_id: "luxu", type_name: "LUXU"},
-                        {type_id: "uncensored-leak", type_name: "无码流出"},
-						{type_id: "fc2", type_name: "FC2"},
-						{type_id: "heyzo", type_name: "HEYZO"},
-                        {type_id: "tokyohot", type_name: "东京热"},
+						{type_id: "maan", type_name: "MAAN"},
 						{type_id: "1pondo", type_name: "一本道"},
+						{type_id: "tokyohot", type_name: "东京热"},
+						{type_id: "heyzo", type_name: "HEYZO"},
 						{type_id: "madou", type_name: "麻豆传媒"},
-						{type_id: "klive", type_name: "韩国直播"},
 						{type_id: "clive", type_name: "中国直播"},
-						{type_id: "actresses/ranking", type_name: "女优"},
+                        {type_id: "klive", type_name: "韩国直播"},
 						{type_id: "genres", type_name: "类型"},
+						{type_id: "actresses/ranking", type_name: "女优"},
                         {type_id: "makers", type_name: "发行商"}],
                     filters: {
                         "new": defaultFilter,
-                        "madou": defaultFilter,
-                        "chinese-subtitle": defaultFilter,
-                        "uncensored-leak": defaultFilter,
+						"release": defaultFilter,
+						"chinese-subtitle": defaultFilter,
+						"uncensored-leak": defaultFilter,
+						"fc2": defaultFilter,
+						"siro": defaultFilter,
+						"luxu": defaultFilter,
+						"maan": defaultFilter,
+						"1pondo": defaultFilter,
+						"tokyohot": defaultFilter,
+						"heyzo": defaultFilter,
+						"madou": defaultFilter,
+						"clive": defaultFilter,
+						"klive": defaultFilter,
                         "actresses/ranking": defaultFilter,
                         "makers": defaultFilter,
                         "genres": defaultFilter
