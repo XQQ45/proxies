@@ -1,0 +1,234 @@
+import json
+import sys
+import requests
+from pyquery import PyQuery as pq
+sys.path.append('..')
+from base.spider import Spider
+
+
+class Spider(Spider):
+
+    def init(self, extend='{}'):
+        config=json.loads(extend)
+        self.proxies=config.get('proxies',{})
+        self.plp=config.get('plp','')
+        self.session=requests.session()
+        self.session.proxies=self.proxies
+        pass
+
+    def getName(self):
+        pass
+
+    def isVideoFormat(self, url):
+        pass
+
+    def manualVideoCheck(self):
+        pass
+
+    def destroy(self):
+        pass
+
+    host='https://rou.video'
+
+    headers = {
+        'referer': f'{host}/',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+    }
+
+    def homeContent(self, filter):
+        result = {}
+        classes = []
+        filters = {}
+        
+        # 自定义分类列表
+        custom_classes = [
+            {"type_name": "国产AV", "type_id": "/t/國產AV"},
+            {"type_name": "麻豆传媒", "type_id": "/t/麻豆傳媒"},
+            {"type_name": "OnlyFans", "type_id": "/t/OnlyFans"},
+            {"type_name": "自拍流出", "type_id": "/t/自拍流出"},
+            {"type_name": "探花", "type_id": "/t/探花"},
+            {"type_name": "日本", "type_id": "/t/日本"},
+            {"type_name": "糖心Vlog", "type_id": "/t/糖心Vlog"},
+            {"type_name": "蜜桃传媒", "type_id": "/t/蜜桃影像傳媒"},
+            {"type_name": "星空传媒", "type_id": "/t/星空無限傳媒"},
+            {"type_name": "天美传媒", "type_id": "/t/天美傳媒"},
+            {"type_name": "香蕉传媒", "type_id": "/t/香蕉視頻傳媒"},
+            {"type_name": "精东影业", "type_id": "/t/精東影業"},
+            {"type_name": "爱豆传媒", "type_id": "/t/愛豆傳媒"},
+            {"type_name": "麻豆系列", "type_id": "/t/MD"},
+            {"type_name": "唐伯虎", "type_id": "/t/tangbo_hu"},
+            {"type_name": "玩偶姐姐", "type_id": "/t/HongKongDoll"},
+            {"type_name": "米菲兔", "type_id": "/t/BunnyMiffy"},
+            {"type_name": "台北娜娜", "type_id": "/t/Nana_Taipei"},
+            {"type_name": "艾莉", "type_id": "/t/ssrpeach"},
+            {"type_name": "苏畅", "type_id": "/t/suchanghub"},
+            {"type_name": "91沈先生", "type_id": "/t/91沈先生"},
+            {"type_name": "探花精选", "type_id": "/t/探花精選400"},
+            {"type_name": "小宝探花", "type_id": "/t/小寶尋花"},
+            {"type_name": "小景甜", "type_id": "/t/調教小景甜"},
+            {"type_name": "午夜探花", "type_id": "/t/午夜尋花"},
+            {"type_name": "探花合集", "type_id": "/t/探花合集"}
+        ]
+        
+        # 需要添加子分类的分类列表
+        subcategory_tids = [
+            "/t/國產AV",
+            "/t/麻豆傳媒",
+            "/t/OnlyFans",
+            "/t/探花"
+        ]
+        
+        # 获取网站分类数据用于子分类
+        try:
+            cdata = self.getpq(self.session.get(f'{self.host}/cat', headers=self.headers))
+            category_sections = {k('h2 a').attr('href'): k for k in cdata('.space-y-8 section').items()}
+        except Exception as e:
+            print(f"获取子分类数据失败: {str(e)}")
+            category_sections = {}
+        
+        # 填充 classes 和 filters
+        for cls in custom_classes:
+            type_id = cls['type_id']
+            type_name = cls['type_name']
+            if type_id and type_name:
+                classes.append({
+                    'type_name': type_name,
+                    'type_id': type_id
+                })
+                
+                # 基础筛选条件
+                filter_conditions = [
+                    {
+                        'key': 'order',
+                        'name': '排序',
+                        'value': [
+                            {'n': '观看', 'v': 'viewCount'},
+                            {'n': '点赞', 'v': 'likeCount'}
+                        ]
+                    }
+                ]
+                
+                # 为特定分类添加子分类
+                if type_id in subcategory_tids and type_id in category_sections:
+                    section = category_sections[type_id]
+                    if section('.grid.grid-cols-2 a'):
+                        # 过滤掉不想要的子分类（如720P等）
+                        subcategories = []
+                        for item in section('.grid.grid-cols-2 a').items():
+                            sub_name = item.text()
+                            sub_url = item.attr('href')
+                            # 过滤条件：不是主分类名称
+                            if sub_name != type_name:
+                                subcategories.append({
+                                    'n': sub_name,
+                                    'v': sub_url
+                                })
+                        
+                        if subcategories:
+                            filter_conditions.append({
+                                'key': 'subtype',
+                                'name': '子分类',
+                                'value': subcategories
+                            })
+                
+                filters[type_id] = filter_conditions
+        
+        result['class'] = classes
+        result['filters'] = filters
+        return result
+
+    def homeVideoContent(self):
+        try:
+            res = self.getpq(self.session.get(f'{self.host}/home', headers=self.headers))
+            videos = self.getlist(res('.grid.grid-cols-2.lg\\:grid-cols-4 div.aspect-video.relative'))
+            return {'list': videos}
+        except Exception as e:
+            print(f"homeVideoContent: Error - {str(e)}")
+            return {'list': []}
+
+    def categoryContent(self, tid, pg, filter, extend):
+        tid = extend.get('type') or tid
+        subtype = extend.get('subtype')
+        if subtype:
+            tid = subtype
+        
+        params = {
+            'order': extend.get('order', ''),
+            'page': pg,
+        }
+        
+        try:
+            url = f'{self.host}{tid}'
+            response = self.session.get(url, params=params, headers=self.headers)
+            data = self.getpq(response)
+            videos = self.getlist(data('.grid.grid-cols-2 div.aspect-video.relative'))
+            result = {
+                'list': videos,
+                'page': pg,
+                'pagecount': 9999,
+                'limit': 90,
+                'total': 999999
+            }
+            return result
+        except Exception as e:
+            print(f"categoryContent: Error - {str(e)}")
+            return {'list': [], 'page': pg, 'pagecount': 9999, 'limit': 90, 'total': 999999}
+
+    # 其他方法保持不变...
+    def detailContent(self, ids):
+        try:
+            data = self.getpq(self.session.get(f'{self.host}{ids[0]}', headers=self.headers))
+            url_response = self.session.get(f"{self.host}/api{ids[0]}", headers=self.headers)
+            url = url_response.json()['video']['videoUrl']
+            n = data('.md\\:col-span-2 .px-2 .hidden').eq(0).text() or 'xxxx'
+            vod = {
+                'vod_content': ' '.join(['[a=cr:' + json.dumps({'id': j.attr('href'), 'name': j.text()}) + '/]' + j.text() + '[/a]' for j in data('.flex.justify-between div a').items()]),
+                'vod_play_from': 'MuChen',
+                'vod_play_url': f"{n}${url}"
+            }
+            return {'list': [vod]}
+        except Exception as e:
+            print(f"detailContent: Error - {str(e)}")
+            return {'list': []}
+
+    def searchContent(self, key, quick, pg="1"):
+        try:
+            params = {'q': key, 'page': pg}
+            data = self.getpq(self.session.get(f'{self.host}/search', params=params, headers=self.headers))
+            videos = self.getlist(data('.grid.grid-cols-2 div.aspect-video.relative'))
+            return {'list': videos, 'page': pg}
+        except Exception as e:
+            print(f"searchContent: Error - {str(e)}")
+            return {'list': [], 'page': pg}
+
+    def playerContent(self, flag, id, vipFlags):
+        return {'parse': 0, 'url': f"{self.plp}{id}", 'header': self.headers}
+
+    def localProxy(self, param):
+        pass
+
+    def liveContent(self, url):
+        pass
+
+    def getlist(self, data):
+        videos = []
+        for i in data.items():
+            vod_id = i('a').attr('href')
+            vod_name = i('img.relative.w-full').attr('alt')
+            if vod_id and vod_name:
+                videos.append({
+                    'vod_id': vod_id,
+                    'vod_name': vod_name,
+                    'vod_pic': i('img.relative.w-full').attr('src'),
+                    'vod_year': i('.absolute.top-1').text(),
+                    'vod_remarks': i('.absolute.bottom-1').text(),
+                    'style': {"type": "rect", "ratio": 1.33}
+                })
+        return videos
+
+    def getpq(self, data):
+        try:
+            return pq(data.text)
+        except Exception as e:
+            print(f"getpq: Error - {str(e)}")
+            return pq(data.text.encode('utf-8'))
