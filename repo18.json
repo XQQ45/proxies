@@ -1,0 +1,8 @@
+{
+  "name": "18+ Repo (NSFW)",
+  "description": "This Repo Contains The NSFW sources",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/XQQ45/proxies/refs/heads/main/plugins18.json"
+  ]
+}
